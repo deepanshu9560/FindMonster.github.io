@@ -1,34 +1,43 @@
 import { arrObj } from './monster.js';
 
+let notFound = document.querySelector('.not-found');
+
+function funNotFound() {
+    let notFound = document.querySelector('.not-found');
+    let notCreate = document.createElement('h1');
+    notCreate.innerText = '404 Not Found';
+    notFound.style.display = 'none';
+    notFound.append(notCreate);
+}
+funNotFound();
+
 document.querySelector('.search-field').addEventListener('keyup', function (e) {
     let searchInp = e.currentTarget.value.toLowerCase();
     let findMonster = document.querySelectorAll('.monster');
-    console.log(findMonster)
+    let not = true;
+    // console.log(findMonster)
     for (let monster of findMonster) {
         let name = monster.children[1].innerText.toLowerCase();
         let email = monster.children[2].innerText.toLowerCase();
 
         if (name.includes(searchInp) || email.includes(searchInp)) {
             monster.style.display = 'flex';
+            not = false;
         } else {
             monster.style.display = 'none';
         }
     }
+    if (not) {
+        notFound.style.display = 'flex';
+    } else {
+        notFound.style.display = 'none';
+    }
+
+
+
 })
 
-// let searchInp = document.querySelector('.search-field').value.toLowerCase();
-// let findMonsterss = document.querySelectorAll('.monster');
-// console.log(findMonsterss)
 
-// for(let monsterM of findMonsterss){
-//     console.log(monsterM)
-//     let name = monsterM.children[1].innerText.toLowerCase();
-//     if(name.includes(searchInp)){
-//         console.log('ok')
-//     }else{
-//         document.write('404')
-//     }
-// }
 
 for (let monsterT of arrObj) {
     // console.log(monsterT);
@@ -41,11 +50,12 @@ dabba.forEach((els) => {
         // console.log(els.childNodes);
         // console.log(els.children)
         els.children[1].style.color = '#ffffff';
+        // console.log(els.children[1].innerText)
         els.childNodes[2].style.color = '#ffffff';
     }
 })
 
-monster();
+// monster();
 function monster(efe) {
     let monsterDiv = document.createElement('div');
     monsterDiv.className = 'monster';
@@ -76,4 +86,18 @@ function monster(efe) {
     monsterDiv.style.border = `2px solid ${b}`
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
