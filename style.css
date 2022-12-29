@@ -7,7 +7,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     margin-bottom: 40px;
     padding-right: 20px;
     background: red;
@@ -24,9 +24,11 @@
     padding: 6px 5px;
     outline: none;
     font-family: sans-serif;
-    font: 16px;
+    font-size: 13px;
     border: 2px solid black;
     margin-top: 10px;
+    max-width: 248px;
+    width: 100%;
 }
 
 .monster {
@@ -34,7 +36,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;    
+    margin-top: 20px;
     border-radius: 10px;
 }
 
@@ -62,42 +64,58 @@ p.name {
     margin: 10px;
 }
 
-@media (max-width: 1516px){
+.not-found {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    font-size: 25px;
+    color: #000;
+    /* display: none; */
+}
+
+.not-found h1 {
+    font-family: monospace;
+    font-size: 60px;
+}
+
+@media (max-width: 1516px) {
     .monster {
-        width: 31%;        
+        width: 31%;
     }
 }
 
-@media (max-width: 1050px){
+@media (max-width: 1050px) {
     .monster {
-        width: 48%; 
+        width: 48%;
     }
 }
 
-@media (max-width: 1016px){
+@media (max-width: 1016px) {
     .monster {
-        width: 40%; 
+        width: 40%;
     }
 }
 
-@media (max-width: 810px){
-    .monster p {    
+@media (max-width: 810px) {
+    .monster p {
         word-break: break-word;
         text-align: center;
         padding: 0 10px;
     }
 }
-@media (max-width: 767px){
+
+@media (max-width: 767px) {
     .monster {
         width: 90%;
     }
 }
 
-@media (max-width: 381px){   
+@media (max-width: 381px) {
     .monster img {
         width: 100%;
         padding: 0 20px;
     }
 }
-
-
