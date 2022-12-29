@@ -111,6 +111,16 @@ p.name {
     .monster {
         width: 90%;
     }
+
+    .not-found h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .not-found h1 {
+        font-size: 30px;
+    }
 }
 
 @media (max-width: 381px) {
